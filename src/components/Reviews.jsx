@@ -1,11 +1,11 @@
 import React from "react";
-import { useContext, useEffect, useState } from "react";
-import { ReviewsContext } from "../context/ReviewsContext";
+import { useEffect, useState } from "react";
+
 import { getReviews } from "../apis/reviews";
 import SingleReview from "./SingleReview";
 
 const Reviews = () => {
-  const { setReviews } = useContext(ReviewsContext);
+  const [reviews, setReviews] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const Reviews = () => {
   return (
     <div>
       <h2 className="text-center">Reviews List</h2>
-      <SingleReview />
+      <SingleReview reviews={reviews} />
     </div>
   );
 };

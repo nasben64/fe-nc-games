@@ -1,11 +1,10 @@
 import React from "react";
-import { ReviewsContext } from "../context/ReviewsContext";
-import { useContext, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { getTop10Reviews } from "../apis/reviews";
 import SingleReview from "./SingleReview";
 
 const Home = () => {
-  const { setReviews } = useContext(ReviewsContext);
+  const [reviews, setReviews] = useState([]);
   // const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -19,7 +18,7 @@ const Home = () => {
   return (
     <div>
       <h2 className="text-center">Top 10 Reviews</h2>
-      <SingleReview />
+      <SingleReview reviews={reviews} />
     </div>
   );
 };

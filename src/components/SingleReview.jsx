@@ -1,11 +1,7 @@
 import React from "react";
-import { ReviewsContext } from "../context/ReviewsContext";
-import { useContext } from "react";
 import Button from "react-bootstrap/Button";
 
-const SingleReview = () => {
-  const { reviews } = useContext(ReviewsContext);
-
+const SingleReview = ({ reviews }) => {
   return (
     <main>
       <ul className="single-view-ul">
