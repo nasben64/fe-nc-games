@@ -15,11 +15,9 @@ const Reviews = () => {
     setIsLoading(false);
   }, []);
 
-  console.log(isLoading);
-
-//   if (isLoading) {
-//     return <h2>Looading ....</h2>;
-//   }
+  if (isLoading) {
+    return <h2>Looading ....</h2>;
+  }
 
   return (
     <div>

@@ -33,7 +33,7 @@ const SingleReview = () => {
                   size="sm"
                   className="single-view-button"
                 >
-                  Update Votes
+                  Full Review
                 </Button>
                 <Button
                   variant="outline-dark"
