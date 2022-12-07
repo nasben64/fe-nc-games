@@ -6,7 +6,6 @@ import { getCommentsByReviewId } from "../apis/reviews";
 const Comments = () => {
   const [comments, setComments] = useState([]);
   const { review_id } = useParams();
-  console.log(review_id, "Review Id");
 
   useEffect(() => {
     getCommentsByReviewId(review_id).then((commentsFromApi) => {
