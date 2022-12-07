@@ -10,6 +10,10 @@ html {
   font-size: 18px;
 }
 
+ul {
+  padding: 1rem;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   background-color: #6daa61;
@@ -79,4 +83,27 @@ li {
     display: flex;
     flex-wrap: wrap;
   }
+}
+
+@media only screen and (max-width: 320px) {
+  img {
+    width: 10em;
+    height: 10em;
+    border-radius: 15%;
+    align-content: center;
+  }
+}
+
+.review-card {
+  margin: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.review-card-img {
+  padding: 20px;
+  width: 340px;
+  height: 340px;
 }
