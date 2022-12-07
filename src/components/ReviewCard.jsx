@@ -9,15 +9,11 @@ const ReviewCard = (props) => {
   const { review_id } = useParams();
   const [review, setReview] = useState([]);
 
-  console.log("the id", review_id);
-
   useEffect(() => {
     getReviewById(review_id).then((response) => {
       setReview(response);
     });
   }, []);
-
-  console.log("the review", review);
 
   return (
     <div className="review-card">
