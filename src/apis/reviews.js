@@ -39,3 +39,12 @@ export const getReviewById = async (id) => {
     console.log(err);
   }
 };
+
+export const getCommentsByReviewId = async (id) => {
+  try {
+    const response = await axiosBaseUrl.get(`/reviews/${id}/comments`);
+    return response.data.comments;
+  } catch (err) {
+    console.log(err);
+  }
+};

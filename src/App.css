@@ -107,3 +107,16 @@ li {
   width: 340px;
   height: 340px;
 }
+
+.comments-top {
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  margin: 20px;
+  background: white;
+  opacity: 0.7;
+}
+
+.comment-name-vote {
+  display: flex;
+  justify-content: space-between;
+}

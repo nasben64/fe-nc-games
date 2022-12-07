@@ -10,6 +10,11 @@ const SingleReview = ({ reviews }) => {
     navigate(`/reviews/${id}`);
   };
 
+  const handelViewComment = (e, id) => {
+    e.preventDefault();
+    navigate(`/reviews/${id}/comments`);
+  };
+
   return (
     <main>
       <ul className="single-view-ul">
@@ -40,11 +45,11 @@ const SingleReview = ({ reviews }) => {
                 >
                   Full Review
                 </Button>
-
                 <Button
                   variant="outline-dark"
                   size="sm"
                   className="single-view-button"
+                  onClick={(e) => handelViewComment(e, review.review_id)}
                 >
                   View Comments
                 </Button>
