@@ -30,3 +30,12 @@ export const getTop10Reviews = async () => {
     console.log(err);
   }
 };
+
+export const getReviewById = async (id) => {
+  try {
+    const response = await axiosBaseUrl.get(`/reviews/${id}`);
+    return response.data.review[0];
+  } catch (err) {
+    console.log(err);
+  }
+};
