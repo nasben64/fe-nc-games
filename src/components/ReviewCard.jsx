@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { getReviewById } from "../apis/reviews";
 import Moment from "react-moment";
 
-const ReviewCard = (props) => {
+const ReviewCard = () => {
   const { review_id } = useParams();
   const [review, setReview] = useState([]);
 

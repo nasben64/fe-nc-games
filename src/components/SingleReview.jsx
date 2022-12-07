@@ -7,7 +7,6 @@ const SingleReview = ({ reviews }) => {
 
   const handelFullReview = (e, id) => {
     e.preventDefault();
-    console.log("inside the SingleReview", id);
     navigate(`/reviews/${id}`);
   };
 
