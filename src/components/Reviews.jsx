@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 
 import { getReviews } from "../apis/reviews";
 import SingleReview from "./SingleReview";
@@ -15,10 +15,6 @@ const Reviews = () => {
     });
     setIsLoading(false);
   }, []);
-
-  // if (isLoading) {
-  //   return <h2>Looading ....</h2>;
-  // }
 
   return (
     <div>
@@ -37,4 +33,3 @@ const Reviews = () => {
 };
 
 export default Reviews;
-

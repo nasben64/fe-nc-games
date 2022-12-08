@@ -1,14 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Moment from "react-moment";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getCommentsByReviewId } from "../apis/reviews";
 import { ClipLoader } from "react-spinners";
 import Button from "react-bootstrap/Button";
+import { UserContext } from "../context/UserContext";
 
 const Comments = () => {
   const [comments, setComments] = useState([]);
   const { review_id } = useParams();
   const [isLoading, setIsLoading] = useState(true);
+  const navigate = useNavigate();
+  const { user } = useContext(UserContext);
 
   useEffect(() => {
     getCommentsByReviewId(review_id).then((commentsFromApi) => {
@@ -21,7 +24,15 @@ const Comments = () => {
     e.preventDefault();
   };
 
-  const handelWriteComment = () => {};
+  const handelWriteComment = (e) => {
+    e.stopPropagation();
+    if (user.username === undefined) {
+      alert("Please login first");
+      navigate("/users");
+    } else {
+      navigate(`/reviews/${review_id}/addcomments`);
+    }
+  };
 
   return (
     <main>
