@@ -8,6 +8,7 @@ import Reviews from "./components/Reviews";
 import Home from "./components/Home";
 import ReviewCard from "./components/ReviewCard";
 import Comments from "./components/Comments";
+import AddComment from "./components/AddComment";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/users" element={<Users />} />
         <Route path="/reviews/:review_id" element={<ReviewCard />} />
         <Route path="/reviews/:review_id/comments" element={<Comments />} />
+        <Route path="/reviews/:review_id/addcomments" element={<AddComment />} />
       </Routes>
     </div>
   );

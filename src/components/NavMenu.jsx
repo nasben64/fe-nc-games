@@ -1,20 +1,21 @@
 import React from "react";
 import Nav from "react-bootstrap/Nav";
+import { Link } from "react-router-dom";
 
 const NavMenu = () => {
   return (
     <Nav className="nav-text">
       <Nav.Item>
-        <Nav.Link href="/">Home</Nav.Link>
+        <Link to="/">Home</Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link href="/reviews">Reviews</Nav.Link>
+        <Link to="/reviews">Reviews</Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link href="/categories">Categories</Nav.Link>
+        <Link to="/categories">Categories</Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link href="/users">Users</Nav.Link>
+        <Link to="/users">Users</Link>
       </Nav.Item>
     </Nav>
   );

@@ -36,6 +36,8 @@ body {
 }
 
 .header-text {
+  display: flex;
+  justify-content: space-between;
   border: 1px solid gray;
   background-color: #314533;
   color: white;
@@ -43,6 +45,8 @@ body {
 
 .nav-text {
   border: 1px solid #314533;
+  display: flex;
+  justify-content: space-around;
 }
 
 .single-view {
@@ -52,6 +56,33 @@ body {
   color: black;
   background-color: #e5f48d;
   max-width: 320px;
+}
+
+.user-card {
+  border: 2px solid gray;
+  margin: 10px 10px 20px 10px;
+  padding: 20px;
+  color: white;
+  background-color: gray;
+  max-width: 320px;
+}
+
+.user-img {
+  width: 10em;
+  height: 10em;
+  border-radius: 50%;
+}
+
+.user-button {
+  margin: 10px;
+  padding: 10px;
+  width: 200px;
+  align-items: center;
+}
+
+.user-name-div {
+  display: flex;
+  justify-content: space-between;
 }
 
 li {
@@ -147,4 +178,18 @@ img {
 .no-comments {
   padding: 10px;
   margin: 10px;
+}
+
+.addComment-text-area {
+  height: 200px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.comment-success {
+  color: blue;
+}
+
+.comment-alert {
+  color: red;
 }
