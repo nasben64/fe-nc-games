@@ -7,6 +7,7 @@ import Users from "./components/Users";
 import Reviews from "./components/Reviews";
 import Home from "./components/Home";
 import ReviewCard from "./components/ReviewCard";
+import Comments from "./components/Comments";
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
         <Route path="/reviews" element={<Reviews />} />
         <Route path="/categories" element={<Categories />} />
         <Route path="/users" element={<Users />} />
-        <Route path="/reviews/:review_id" element={<ReviewCard/>}/>
+        <Route path="/reviews/:review_id" element={<ReviewCard />} />
+        <Route path="/reviews/:review_id/comments" element={<Comments />} />
       </Routes>
     </div>
   );
