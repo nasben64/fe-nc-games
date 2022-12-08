@@ -36,9 +36,8 @@ const AddComment = () => {
     }
   };
 
-  console.log(message);
-
   const handelTextChange = (e) => {
+    setMessage("");
     setComment(e.target.value);
   };
 
