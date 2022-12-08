@@ -10,10 +10,8 @@ const AddComment = () => {
   const { review_id } = useParams();
   const { user } = useContext(UserContext);
   const navigate = useNavigate();
-  const { message, setMessage } = useState("");
-  const { isSuccess, setIsSuccess } = useState(true);
-
-  //   const successMessage = document.getElementById("message");
+  const [message, setMessage] = useState("");
+  const [isSuccess, setIsSuccess] = useState(true);
 
   const createUserComment = async () => {
     try {
@@ -38,9 +36,10 @@ const AddComment = () => {
     }
   };
 
+  console.log(message);
+
   const handelTextChange = (e) => {
     setComment(e.target.value);
-    successMessage.innerText = "";
   };
 
   return (
