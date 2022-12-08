@@ -10,14 +10,18 @@ const AddComment = () => {
   const { review_id } = useParams();
   const { user } = useContext(UserContext);
   const navigate = useNavigate();
-  const successMessage = document.getElementById("message");
+  const { message, setMessage } = useState("");
+  const { isSuccess, setIsSuccess } = useState(true);
+
+  //   const successMessage = document.getElementById("message");
 
   const createUserComment = async () => {
     try {
       const commentObj = { username: user.username, body: comment };
       await addComment(review_id, commentObj);
-      successMessage.innerText = `Thank you ${user.name} for your comment`;
-      successMessage.style.color = "blue";
+
+      setMessage(`Thank you ${user.name} for your comment`);
+      setIsSuccess(true);
       setComment("");
     } catch (err) {
       console.log(err);
@@ -27,8 +31,8 @@ const AddComment = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (comment === "") {
-      successMessage.innerText = `You need to write you comment before you can submit it`;
-      successMessage.style.color = "red";
+      setMessage(`You need to write you comment before you can submit it`);
+      setIsSuccess(false);
     } else {
       createUserComment();
     }
@@ -50,7 +54,12 @@ const AddComment = () => {
             to="comment"
             className="form-control addComment-text-area"
           ></textarea>
-          <p id="message"></p>
+          <p
+            className={isSuccess ? "comment-success" : "comment-alert"}
+            id="message"
+          >
+            {message}
+          </p>
         </div>
         <div className="single-view-buttons mb-2">
           <Button

@@ -185,3 +185,11 @@ img {
   margin: 10px;
   padding: 10px;
 }
+
+.comment-success {
+  color: blue;
+}
+
+.comment-alert {
+  color: red;
+}
