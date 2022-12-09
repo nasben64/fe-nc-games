@@ -22,7 +22,10 @@ function App() {
         <Route path="/users" element={<Users />} />
         <Route path="/reviews/:review_id" element={<ReviewCard />} />
         <Route path="/reviews/:review_id/comments" element={<Comments />} />
-        <Route path="/reviews/:review_id/addcomments" element={<AddComment />} />
+        <Route
+          path="/reviews/:review_id/addcomments"
+          element={<AddComment />}
+        />
       </Routes>
     </div>
   );
