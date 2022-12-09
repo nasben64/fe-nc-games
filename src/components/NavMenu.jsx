@@ -9,7 +9,14 @@ const NavMenu = () => {
         <Link to="/">Home</Link>
       </Nav.Item>
       <Nav.Item>
-        <Link to="/reviews">Reviews</Link>
+        <Link
+          to={{
+            pathname: "/reviews",
+            search: "",
+          }}
+        >
+          Reviews
+        </Link>
       </Nav.Item>
       <Nav.Item>
         <Link to="/categories">Categories</Link>

@@ -1,14 +1,21 @@
 import axiosBaseUrl from "./connection";
 
-export const getReviews = () => {
-  return axiosBaseUrl
-    .get("/reviews")
-    .then((response) => {
-      return response.data.reviews;
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+export const getReviews = async (searchParams) => {
+  try {
+    let response = [];
+    if (searchParams === "") {
+      response = await axiosBaseUrl.get("/reviews");
+    } else {
+      response = await axiosBaseUrl.get("/reviews", {
+        params: {
+          category: searchParams,
+        },
+      });
+    }
+    return response.data.reviews;
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 function compare(a, b) {
