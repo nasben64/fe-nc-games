@@ -10,7 +10,10 @@ const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const location = useLocation();
-  const selectedCategory = location.search.split("?").join("");
+  let selectedCategory = null;
+  if (location.search !== "") {
+    selectedCategory = location.search.split("?").join("");
+  }
   //const [, setSearchParams] = useSearchParams({});
 
   useEffect(() => {
@@ -19,7 +22,7 @@ const Reviews = () => {
     });
     //setSearchParams({ category: selectedCategory });
     setIsLoading(false);
-  }, []);
+  }, [selectedCategory]);
 
   return (
     <div>

@@ -12,7 +12,7 @@ const NavMenu = () => {
         <Link
           to={{
             pathname: "/reviews",
-            search: "",
+            search: null,
           }}
         >
           Reviews

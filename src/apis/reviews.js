@@ -3,15 +3,15 @@ import axiosBaseUrl from "./connection";
 export const getReviews = async (searchParams) => {
   try {
     let response = [];
-    if (searchParams === "") {
-      response = await axiosBaseUrl.get("/reviews");
-    } else {
-      response = await axiosBaseUrl.get("/reviews", {
-        params: {
-          category: searchParams,
-        },
-      });
-    }
+    // if (searchParams === "") {
+    //   response = await axiosBaseUrl.get("/reviews");
+    // } else {
+    response = await axiosBaseUrl.get("/reviews", {
+      params: {
+        category: searchParams,
+      },
+    });
+    // }
     return response.data.reviews;
   } catch (err) {
     console.log(err);

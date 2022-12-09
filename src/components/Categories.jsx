@@ -27,6 +27,7 @@ const Categories = () => {
                 <p className="text-center">{category.slug}</p>
                 <p>{category.description}</p>
               </div>
+
               <Link
                 to={{
                   pathname: "/reviews",
